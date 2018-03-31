@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
-export default class App extends Component {
+export default class Company extends Component {
   render () {
     return (
-      <div>this is App</div>
+      <li>
+        
+      </li>
     );
   }
 }

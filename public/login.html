@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">
+
+  <!-- x5内核浏览器(微信,QQ浏览器)强制竖屏 -->
+  <!-- <meta name="x5-orientation" content="portrait"> -->
+
+  <title>欢迎使用小强erp导游报账</title>
+  <style type="text/css">
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #2c3e50;
+      height: 100%;
+    }
+
+    .title {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .inputed {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inputed>div {
+      flex: 1;
+      color: inherit;
+      min-height: 48px;
+      text-decoration: none;
+      background-color: #fff;
+      position: relative;
+      background-image: -webkit-linear-gradient(top, #d9d9d9, #d9d9d9 50%, transparent 0);
+      background-image: linear-gradient(180deg, #d9d9d9, #d9d9d9 50%, transparent 0);
+      background-size: 120% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-origin: content-box;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 16px;
+      line-height: 1;
+      overflow: hidden;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .inputed>div:nth-child(2) {
+      background-size: 100% 2px;
+    }
+
+    .inputed>div .label {
+      flex: 2;
+    }
+
+    .inputed>div input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      border: 0;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 6;
+      outline: 0;
+      line-height: 1.6;
+      font-size: inherit;
+      width: 100%;
+    }
+
+    .operate {
+      text-align: center;
+      padding: 10px;
+      padding-top: 25px;
+    }
+
+    .operate button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 4px;
+      border: 0;
+      box-sizing: border-box;
+      color: inherit;
+      display: block;
+      font-size: 16px;
+      height: 41px;
+      outline: 0;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      color: #fff;
+      background-color: #26a2ff;
+      width: 100%;
+    }
+
+    #warn .msg {
+      padding-top: 136px;
+      text-align: center;
+    }
+
+    @font-face {
+      font-weight: 400;
+      font-style: normal;
+      font-family: weui;
+      src: url("data:application/octet-stream;base64,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") format("truetype")
+    }
+
+    .icon-area {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .icon-warn {
+      color: #f76260;
+      display: inline-block;
+      vertical-align: middle;
+      text-rendering: auto;
+      font: normal normal normal 93px weui;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .icon-warn:before {
+      content: "\EA0B";
+      display: inline-block;
+      margin: 0;
+    }
+
+    .indicator {
+      -webkit-transition: opacity .2s linear;
+      transition: opacity .2s linear;
+    }
+
+    .indicator-wrapper {
+      top: 50%;
+      left: 50%;
+      position: fixed;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .indicator-text {
+      display: block;
+      color: #fff;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .indicator-spin {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .indicator-mask {
+      top: 0;
+      left: 0;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: transparent;
+    }
+
+    .indicator-enter,
+    .indicator-leave-active {
+      opacity: 0;
+    }
+
+    .circle-color-36>div::before {
+      background-color: #ccc;
+    }
+
+    .spinner-fading-circle {
+      position: relative
+    }
+
+    .spinner-fading-circle-circle {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute
+    }
+
+    .spinner-fading-circle-circle::before {
+      content: " ";
+      display: block;
+      margin: 0 auto;
+      width: 15%;
+      height: 15%;
+      border-radius: 100%;
+      -webkit-animation: fading-circle 1.2s infinite ease-in-out both;
+      animation: fading-circle 1.2s infinite ease-in-out both
+    }
+
+    .spinner-fading-circle-circle.is-circle2 {
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle2::before {
+      -webkit-animation-delay: -1.1s;
+      animation-delay: -1.1s
+    }
+
+    .spinner-fading-circle-circle.is-circle3 {
+      -webkit-transform: rotate(60deg);
+      transform: rotate(60deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle3::before {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s
+    }
+
+    .spinner-fading-circle-circle.is-circle4 {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle4::before {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s
+    }
+
+    .spinner-fading-circle-circle.is-circle5 {
+      -webkit-transform: rotate(120deg);
+      transform: rotate(120deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle5::before {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s
+    }
+
+    .spinner-fading-circle-circle.is-circle6 {
+      -webkit-transform: rotate(150deg);
+      transform: rotate(150deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle6::before {
+      -webkit-animation-delay: -0.7s;
+      animation-delay: -0.7s
+    }
+
+    .spinner-fading-circle-circle.is-circle7 {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle7::before {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s
+    }
+
+    .spinner-fading-circle-circle.is-circle8 {
+      -webkit-transform: rotate(210deg);
+      transform: rotate(210deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle8::before {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s
+    }
+
+    .spinner-fading-circle-circle.is-circle9 {
+      -webkit-transform: rotate(240deg);
+      transform: rotate(240deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle9::before {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s
+    }
+
+    .spinner-fading-circle-circle.is-circle10 {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle10::before {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s
+    }
+
+    .spinner-fading-circle-circle.is-circle11 {
+      -webkit-transform: rotate(300deg);
+      transform: rotate(300deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle11::before {
+      -webkit-animation-delay: -0.2s;
+      animation-delay: -0.2s
+    }
+
+    .spinner-fading-circle-circle.is-circle12 {
+      -webkit-transform: rotate(330deg);
+      transform: rotate(330deg)
+    }
+
+    .spinner-fading-circle-circle.is-circle12::before {
+      -webkit-animation-delay: -0.1s;
+      animation-delay: -0.1s
+    }
+
+    @-webkit-keyframes fading-circle {
+      0%,
+      39%,
+      100% {
+        opacity: 0
+      }
+      40% {
+        opacity: 1
+      }
+    }
+
+    @keyframes fading-circle {
+      0%,
+      39%,
+      100% {
+        opacity: 0
+      }
+      40% {
+        opacity: 1
+      }
+    }
+
+    #toast .toast {
+      position: fixed;
+      max-width: 80%;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      box-sizing: border-box;
+      text-align: center;
+      z-index: 1000;
+      -webkit-transition: opacity .3s linear;
+      transition: opacity .3s linear;
+    }
+
+    #toast .toast.is-placemiddle {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%)
+    }
+
+    #toast .toast-text {
+      font-size: 14px;
+      display: block;
+      text-align: center
+    }
+
+    .code-test {
+      border: 0;
+      display: block;
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      right: 10px;
+      padding: 0 8px;
+      font-size: 15px;
+      background: #26a2ff;
+      border-radius: 4px;
+      line-height: 34px;
+      color: #fff;
+    }
+
+    .x-viewport,
+    .x-viewport body {
+      overflow: scroll;
+    }
+
+    .td_head {
+      padding: 60px 0px 30px 29px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #606266;
+    }
+
+    .td_mobile {
+      padding: 0px 0px 2px 36px;
+      color: #909399;
+      font-size: 16px;
+    }
+
+    .td_code {
+      padding: 10px 0px 2px 36px;
+      color: #909399;
+      font-size: 16px;
+    }
+
+    .in_mobile {
+      padding: 0px 0px 2px 0;
+      border: 0;
+      -webkit-box-flex: 1;
+      flex: 1;
+    }
+
+    .td_input {
+      border: 0;
+      height: 30px;
+      width: 100%;
+    }
+
+    .td_input::-webkit-input-placeholder {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .button1 {
+      background-color: #DCDFE6;
+      /* Green */
+      border: none;
+      width: 130px;
+      height: 30px;
+
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+    .button1.btn-active{
+      background: #26a2ff;
+    }
+    .button1.btn-grey{
+      background: #b4b5b5;
+    }
+    .button2 {
+      margin-top: 50px;
+      background-color: #DCDFE6;
+      /* Green */
+      border: none;
+      width: 300px;
+      height: 44px;
+      color: white;
+      text-align: center text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+    .text_bottom {
+      width: 100%;
+      height: 50px;
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      font-size: 14px;
+      text-align: center;
+      color: #909399;
+      font-size: 12px;
+    }
+
+    .in_mobile_box {
+      display: flex;
+      padding: 0 36px;
+    }
+    .button2.btn-active{
+      background: #26a2ff;
+    }
+    input,
+    button {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body onload="loaded()">
+  <div id="app">
+    <div class="td_head">欢迎使用小强ERP导游报账</div>
+    <div class="td_mobile">手机号</div>
+    <div class="in_mobile_box">
+      <span class="in_mobile">
+        <input id="mobile" class="td_input" type="text" name="" placeholder="请输入手机号" />
+      </span>
+      <button class="button1" id="code_btn" type="button">获取验证码</button>
+    </div>
+    <div style="padding:0 36px;">
+      <hr style=" width:100%; background-color:#909399;height:1px;border:none;">
+    </div>
+    <div class="td_code">验证码</div>
+    <div class="in_mobile_box">
+      <span class="in_mobile">
+        <input id="code" class="td_input" type="text" name="" placeholder="请输入验证码" />
+      </span>
+    </div>
+    <div style="padding:0 36px;">
+      <hr style=" width:100%; background-color:#909399;height:1px;border:none;">
+    </div>
+    <div align="center">
+      <button class="button2" id="loginBtn" onclick="submited()" type="button">进入报账</button>
+    </div>
+    <div class="text_bottom">同天下科技有限公司</div>
+  </div>
+  <div id="toast">
+    <div class="toast is-placemiddle" style="padding: 10px;">
+      <span class="toast-text" style="padding-top: 0px;"></span>
+    </div>
+  </div>
+  <!--<div id="warn">
+      <div class="msg">
+        <div class="icon-area"><i class="icon-warn"></i></div>
+        <div class="text-area">
+          <h2 class="title">仅限移动设备使用</h2>
+        </div>
+      </div>
+    </div>-->
+  <div class="indicator">
+    <div class="indicator-wrapper" style="padding: 20px;">
+      <span class="indicator-spin">
+        <div class="spinner-fading-circle circle-color-36" style="width: 32px; height: 32px;">
+          <div class="spinner-fading-circle-circle is-circle2"></div>
+          <div class="spinner-fading-circle-circle is-circle3"></div>
+          <div class="spinner-fading-circle-circle is-circle4"></div>
+          <div class="spinner-fading-circle-circle is-circle5"></div>
+          <div class="spinner-fading-circle-circle is-circle6"></div>
+          <div class="spinner-fading-circle-circle is-circle7"></div>
+          <div class="spinner-fading-circle-circle is-circle8"></div>
+          <div class="spinner-fading-circle-circle is-circle9"></div>
+          <div class="spinner-fading-circle-circle is-circle10"></div>
+          <div class="spinner-fading-circle-circle is-circle11"></div>
+          <div class="spinner-fading-circle-circle is-circle12"></div>
+          <div class="spinner-fading-circle-circle is-circle13"></div>
+        </div>
+      </span>
+      <span class="indicator-text">正在登录...</span>
+    </div>
+    <div class="indicator-mask"></div>
+  </div>
+  <script type="text/javascript">
+    (function () {
+      var $ = function (id) {
+        return document.getElementById(id)
+      }
+      $('mobile').focus();
+      function GetCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg)) {
+          return unescape(arr[2]);
+        }
+        return null;
+      }
+      var openId=GetCookie("guide.openid");
+      var $http = function (url, data, fn) {
+        var xhr = new XMLHttpRequest();
+        var postData = data;
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // xhr.setRequestHeader("Cookie",openId);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            showIndicator();
+            if (xhr.status == 200) {
+              var text = xhr.responseText;
+              if (text) {
+                try{
+                  var res = JSON.parse(text);
+                  fn(res);
+                }catch(err){
+                  fn(text)
+                }
+              }
+            } else {
+              toast('请求失败！')
+            }
+          }
+        }
+        xhr.send(postData);
+      }
+      $('mobile').addEventListener('keyup',function(){
+        var mobile = $('mobile').value;
+        var tel = /^1\d{10}$/;
+        if(tel.test(mobile)){
+          $('code_btn').className='button1 btn-active'
+        }else{
+          $('code_btn').className='button1'
+        }
+      })
+      $('code').addEventListener('keyup',function(){
+        var mobile = $('mobile').value;
+        var code = $('code').value;
+        var loginBtn=document.getElementById('loginBtn');
+        if(mobile!==''&&code!==''){
+          loginBtn.className='button2 btn-active';
+        }else{
+          loginBtn.className='button2'; 
+        }
+      });
+      $('code_btn').addEventListener('click',function(){
+        var phone = $('mobile').value;
+        var tel = /^1\d{10}$/;
+        if(!tel.test(phone)){
+          toast('手机号码不正确!')
+          return false;
+        }
+        $http('/sys/api/guide_m/gain_code', 'phone='+phone, function (res) {
+          if (res.status==='110000') {
+            timeOut('code_btn',60)
+            toast('发送成功')
+          } else if (res.msg) {
+            toast(res.msg);
+          }
+        })
+      })
+      // $('code_btn').click= function() {
+
+      // }
+
+      function timeOut(id, times) {
+        var sendBtn = $(id);
+        var html = times + '秒后重新发送';
+        sendBtn.className='button1 btn-grey'
+        sendBtn.innerText=html;
+        sendBtn.setAttribute('disabled', true);
+
+        var timer = setInterval(function () {
+          times--;
+          sendBtn.innerText=times + '秒后重新发送';
+          if (times === 0) {
+            clearInterval(timer);
+            sendBtn.innerText='发送验证码';
+            sendBtn.className='button1';
+            sendBtn.setAttribute('disabled', false);
+          }
+        }, 1000);
+        return timer;
+      }
+    })()
+
+    function checkOS() {
+      var ua = (navigator.userAgent || navigator.vendor || window.opera);
+      if (ua != null) {
+        var uaName = ua.toLowerCase();
+        if (/android/i.test(uaName) || /ip(hone|od|ad)/i.test(uaName) ||
+          /symbian/i.test(uaName) || /windows (ce|phone)/i.test(uaName) || /mobile/i.test(uaName)) {
+          return true;
+        }
+      }
+      return true;
+    }
+
+    function showIndicator(show) {
+      var ind = document.querySelector(".indicator");
+      if (show) {
+        ind.style.display = "block";
+      } else {
+        ind.style.display = "none";
+      }
+    }
+
+    function loaded() {
+      console.log('loaded');
+      showIndicator();
+      toast();
+      var app = document.getElementById("app");
+      var warn = document.getElementById("warn");
+      app.style.display = "block";
+      // warn.style.display = "none";
+      var c = checkOS();
+      if (!c) {
+        app.style.display = "none";
+        // warn.style.display = "block";
+      }
+    }
+
+    function toast(text, time) {
+      var t = document.getElementById("toast")
+      t.style.display = "block";
+      if (text) {
+        var tx = document.querySelector("#toast .toast-text");
+        tx.innerHTML = text;
+        setTimeout(function () {
+          t.style.display = "none";
+        }, time || 1000);
+      } else {
+        t.style.display = "none";
+      }
+    }
+
+    function submited() {
+      var mobile = document.getElementById("mobile").value;
+      if (!mobile) {
+        toast('请输入手机号码');
+        return;
+      }
+      var code = document.getElementById("code").value;
+      if (!code) {
+        toast('请输入密码');
+        return;
+      }
+      var postData = "mobile=" + mobile + "&code=" + code;
+      showIndicator(true);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/sys/api/guide_m/login", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          showIndicator();
+          if (xhr.status == 200) {
+            var text = xhr.responseText;
+            console.log(text);
+            if (text) {
+              try{
+                var res = JSON.parse(text);
+                if (res.success) {
+                  var $origin=location.origin;
+                  if($origin.indexOf('192')>0||$origin.indexOf('127')>0){
+                    location.href=location.origin;
+                    return false;
+                  }
+                  location.href=location.origin  + "/home";
+                } else if (res.msg) {
+                  toast(res.msg);
+                }
+              }catch(err){
+
+              }
+            }
+          } else if (xhr.status == 302) {
+            var redirect = xhr.getResponseHeader("Location");
+            if (redirect && redirect !== "") {
+              window.location.replace(redirect);
+            }
+          } else {
+            toast("请重新登陆");
+          }
+        }
+      };
+      xhr.send(postData);
+    }
+  </script>
+</body>
+
+</html>
