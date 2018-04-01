@@ -1,0 +1,11 @@
+.ct {
+  composes: font-color from "css/common.css";
+  margin-top: 5px;
+}
+.separate {
+  margin: 0 5px;
+}
+.plan-num {
+  composes: middle from "css/common.css";
+  right: 8%;
+}

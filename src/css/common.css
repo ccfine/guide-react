@@ -1,3 +1,13 @@
 .font-color {
   color: #909399;
 }
+.manner {
+  margin: 2px;
+  padding: 10px;
+  background-color: #fff;
+}
+.middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
