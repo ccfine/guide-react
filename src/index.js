@@ -3,9 +3,10 @@ import ReactDom from "react-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import AuthRoute from "component/authRoute/AuthRoute.jsx";
 import Home from "component/home/Home.jsx";
+import Group from "component/group/Group.jsx";
 import reducer from "./redux/reducer.js";
 import "css/index.css";
 import registerServiceWorker from "./registerServiceWorker.js";
@@ -17,14 +18,15 @@ let store = createStore(reducer, compose(
 
 ReactDom.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <AuthRoute></AuthRoute>
         <Switch>
           <Route path="/home" component={ Home }></Route>
+          <Route path="/group" component={ Group }></Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
   ,
   document.getElementById("root")

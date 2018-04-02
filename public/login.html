@@ -729,11 +729,11 @@
                 var res = JSON.parse(text);
                 if (res.success) {
                   var $origin=location.origin;
-                  if($origin.indexOf('192')>0||$origin.indexOf('127')>0){
-                    location.href=location.origin;
+                  if($origin.indexOf('192')>0 || $origin.indexOf('127')>0 || $origin.indexOf('localhost')>0){
+                    location.href=location.origin + "/#/home";
                     return false;
                   }
-                  location.href=location.origin  + "/home";
+                  location.href=location.origin  + "/sys/weixin/guide/index.html#/home";
                 } else if (res.msg) {
                   toast(res.msg);
                 }
