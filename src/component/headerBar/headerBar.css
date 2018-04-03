@@ -1,0 +1,12 @@
+.arrow-container {
+  position: relative;
+  width: 50px;
+  height: 100%;
+  border: 1px solid red;
+}
+.left-arrow {
+  composes: middle from "css/common.css";
+  width: 35px;
+  height: 25px;
+  right: 0;
+}

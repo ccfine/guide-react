@@ -12,3 +12,9 @@
   padding: 10px;
   background-color: #fff;
 }
+:global(.header-bar){
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  background-color: #409EFF;
+}
