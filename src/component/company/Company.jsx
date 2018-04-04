@@ -15,7 +15,7 @@ export default class Company extends Component {
       separate = <span className={ style.separate }>|</span>;
     }
     return (
-      <li className="manner">
+      <li className="manner" onClick={ this.handleSwitchRoute.bind(this) }>
         <h3 className="font-size">{ this.props.company.cpyName }</h3>
         <div className={ style.ct }>
           { this.props.company.ctProvince? this.props.company.ctProvince: null }
@@ -23,7 +23,7 @@ export default class Company extends Component {
           { this.props.company.ctCity? this.props.company.ctCity: null }
         </div>
         <span className={ style["plan-num"] }>{ this.props.company.planNum }个团期</span>
-        <RightArrow onSwitch={ this.handleSwitchRoute.bind(this) }></RightArrow>
+        <RightArrow></RightArrow>
       </li>
     );
   }
