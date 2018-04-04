@@ -2,7 +2,8 @@
   color: #909399;
 }
 .manner {
-  margin: 2px;
+  position: relative;
+  margin-bottom: 2px;
   padding: 10px;
   background-color: #fff;
 }

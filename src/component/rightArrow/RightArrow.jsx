@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import rightArrow from "./rightArrow.png";
+import rightArrow from "./rightArrow.svg";
 import style from "./rightArrow.css";
 
 export default class Company extends Component {

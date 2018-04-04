@@ -6,7 +6,8 @@ import { Provider } from "react-redux";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import AuthRoute from "component/authRoute/AuthRoute.jsx";
 import Home from "component/home/Home.jsx";
-import Group from "component/group/Group.jsx";
+import GroupAccount from "component/groupAccount/GroupAccount.jsx";
+import HistoryAccount from "component/historyAccount/HistoryAccount.jsx";
 import reducer from "./redux/reducer.js";
 import "css/index.css";
 import registerServiceWorker from "./registerServiceWorker.js";
@@ -23,7 +24,8 @@ ReactDom.render(
         <AuthRoute></AuthRoute>
         <Switch>
           <Route path="/home" component={ Home }></Route>
-          <Route path="/group" component={ Group }></Route>
+          <Route path="/group" component={ GroupAccount }></Route>
+          <Route path="/history" component={ HistoryAccount }></Route>
         </Switch>
       </div>
     </HashRouter>
