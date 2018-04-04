@@ -7,5 +7,5 @@
 }
 .plan-num {
   composes: middle from "css/common.css";
-  right: 8%;
+  right: 9%;
 }

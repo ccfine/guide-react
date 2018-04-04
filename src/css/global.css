@@ -6,17 +6,19 @@
   left: 0;
   background-color: #F0F0F0;
 }
+:global(.font-size) {
+  font-size: 1.4rem;
+}
 :global(.manner) {
   position: relative;
   margin-bottom: 2px;
   padding: 10px;
   background-color: #fff;
 }
-:global(.header-bar){
+:global(.bar) {
   display: flex;
   justify-content: space-between;
   height: 40px;
   line-height: 40px;
-  color: #fff;
-  background-color: #409EFF;
+  background-color: #fff;  
 }

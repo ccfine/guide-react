@@ -19,7 +19,7 @@ export default class HeaderBar extends Component {
   }
   render () {
     return (
-      <div className="header-bar">
+      <div className={ style["header-bar"] }>
         <div className={ style["arrow-container"] } onClick={ this.handleBackHome.bind(this) }>
           <img src={ leftArrow }  className={ style["left-arrow"] } alt="左箭头返回首页" />
         </div>

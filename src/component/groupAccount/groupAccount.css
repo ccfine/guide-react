@@ -1,0 +1,7 @@
+.account-state {
+  composes: font-size from "css/common.css";
+  position: relative;
+  width: 100px;
+  padding-left: 10px;
+  border-right: 2px solid #F0F0F0;
+}

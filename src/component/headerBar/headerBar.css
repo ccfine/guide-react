@@ -1,3 +1,8 @@
+.header-bar {
+  composes: bar from "css/common.css";
+  color: #fff;
+  background-color: #409EFF;
+}
 .arrow-container {
   position: relative;
   width: 45px;
@@ -9,5 +14,6 @@
   right: 0;
 }
 .account {
+  composes: font-size from "css/common.css";
   padding-right: 15px;
 }

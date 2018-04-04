@@ -1,6 +1,9 @@
 .font-color {
   color: #909399;
 }
+.font-size {
+  font-size: 1.4rem;
+}
 .manner {
   position: relative;
   margin-bottom: 2px;
@@ -11,4 +14,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;  
 }

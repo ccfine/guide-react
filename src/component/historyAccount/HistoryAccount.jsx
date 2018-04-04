@@ -6,7 +6,7 @@ export default class HistoryAccount extends Component {
   render () {
     return (
       <div className="screen">
-        <HeaderBar account="团期报账"></HeaderBar>
+        <HeaderBar account="团期报账"></HeaderBar>    
       </div>
     );
   }

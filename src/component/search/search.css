@@ -1,0 +1,25 @@
+.search {
+  position: relative;
+  width: 200px;
+}
+.search-container {
+  composes: middle from "css/common.css";
+  width: 150px;
+  height: 30px;
+  border: 1px solid #909399;
+  border-radius: 20px;
+}
+.search-area {
+  composes: middle from "css/common.css";
+  width: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+}
+.search-btn {
+  composes: middle from "css/common.css";
+  composes: font-color from "css/common.css";
+  composes: font-size from "css/common.css";
+  right: 10px;
+}

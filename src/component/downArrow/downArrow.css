@@ -1,0 +1,6 @@
+.down-arrow {
+  composes: middle from "css/common.css";
+  width: 25px;
+  height: 30px;
+  right: 5px;
+}

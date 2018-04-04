@@ -3,11 +3,12 @@
   font-size: 1rem;
 }
 html {
-  font-size: 12px;
+  font-size: 10px;
 }
 body, div, h1, h2, h3, ul, li {
   margin: 0;
   padding: 0;
+  font-size: 1.2rem;
   font-weight: normal;
   list-style-type: none;
 }
