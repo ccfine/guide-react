@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Group from "component/group/Group.jsx";
+import "css/global.css";
 import style from "./groupList.css";
 
 export default class GroupList extends Component {
@@ -12,7 +13,7 @@ export default class GroupList extends Component {
     }
     return (
       <div>
-        <div className={ style.amount }>
+        <div className="font-color-2 padding10">
           团量：{ this.props.groups? this.props.groups.length: 0 } 个
           <span className={ style.separate }>|</span>
           行程结束需报账：{ this.props.groups? num: 0 } 个

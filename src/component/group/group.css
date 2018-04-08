@@ -6,6 +6,20 @@
   border: 1px solid #8FD26E;
   border-radius: 20px;
 }
+.group {
+  composes: manner from "css/common.css";
+  display: flex;
+}
+.amount {
+  padding: 5px 10px 5px 0;
+  border-right: 1px solid #F3F3F3;
+}
+.total {
+  composes: font-color-1 from "css/common.css";
+  composes: font-size-1 from "css/common.css";
+  composes: center from "css/common.css";
+  margin-top: 5px;
+}
 .company {
   composes: manner from "css/common.css";
   composes: font-color-1 from "css/common.css";

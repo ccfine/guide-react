@@ -1,4 +1,0 @@
-.company-list {
-  composes: font-color-1 from "css/common.css";
-  padding: 10px;
-}

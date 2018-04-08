@@ -4,8 +4,14 @@
 .font-color-2 {
   color: #E6A23C;
 }
+.font-color-3 {
+  color: #F56C6C;
+}
 .font-size-1 {
   font-size: 1.4rem;
+}
+.center {
+  text-align: center;
 }
 .manner {
   position: relative;

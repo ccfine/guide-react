@@ -6,8 +6,23 @@
   left: 0;
   background-color: #F0F0F0;
 }
+:global(.font-color-1) {
+  color: #909399;
+}
+:global(.font-color-2) {
+  color: #E6A23C;
+}
+:global(.font-color-3) {
+  color: #F56C6C;
+}
 :global(.font-size-1) {
   font-size: 1.4rem;
+}
+:global(.center) {
+  text-align: center;
+}
+:global(.padding10) {
+  padding: 10px;
 }
 :global(.manner) {
   position: relative;
