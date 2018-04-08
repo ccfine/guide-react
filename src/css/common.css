@@ -1,18 +1,22 @@
-.font-color {
+.font-color-1 {
   color: #909399;
 }
-.font-size {
+.font-color-2 {
+  color: #E6A23C;
+}
+.font-size-1 {
   font-size: 1.4rem;
 }
 .manner {
   position: relative;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   padding: 10px;
   background-color: #fff;
 }
 .middle {
   position: absolute;
   top: 50%;
+  right: 10px;
   transform: translateY(-50%);
 }
 .bar {

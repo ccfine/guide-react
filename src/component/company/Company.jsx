@@ -16,7 +16,7 @@ export default class Company extends Component {
     }
     return (
       <li className="manner" onClick={ this.handleSwitchRoute.bind(this) }>
-        <h3 className="font-size">{ this.props.company.cpyName }</h3>
+        <h3 className="font-size-1">{ this.props.company.cpyName }</h3>
         <div className={ style.ct }>
           { this.props.company.ctProvince? this.props.company.ctProvince: null }
           { separate }

@@ -1,0 +1,7 @@
+.amount {
+  composes: font-color-2 from "css/common.css";
+  padding: 10px;
+}
+.separate {
+  margin: 0 15px;
+}

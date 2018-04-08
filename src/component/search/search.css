@@ -6,6 +6,7 @@
   composes: middle from "css/common.css";
   width: 150px;
   height: 30px;
+  left: 0;
   border: 1px solid #909399;
   border-radius: 20px;
 }
@@ -19,7 +20,6 @@
 }
 .search-btn {
   composes: middle from "css/common.css";
-  composes: font-color from "css/common.css";
-  composes: font-size from "css/common.css";
-  right: 10px;
+  composes: font-color-1 from "css/common.css";
+  composes: font-size-1 from "css/common.css";
 }

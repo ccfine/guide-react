@@ -14,6 +14,6 @@
   right: 0;
 }
 .account {
-  composes: font-size from "css/common.css";
+  composes: font-size-1 from "css/common.css";
   padding-right: 15px;
 }

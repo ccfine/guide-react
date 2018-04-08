@@ -1,5 +1,5 @@
 .ct {
-  composes: font-color from "css/common.css";
+  composes: font-color-1 from "css/common.css";
   margin-top: 5px;
 }
 .separate {
