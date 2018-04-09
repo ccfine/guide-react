@@ -6,9 +6,9 @@ export const groupListData = (data) => {
   return { type: GROUP_LIST_DATA, data: data};
 };
 
-export const getGroupListData = () => {
+export const getGroupListData = (erpId) => {
   return dispatch => {
-    axios.post("/sys/api/guide_m/sel_cpy_name/plan", { erpId: 1, statrDate: "", endDate: "", skey: "", if_reimbursement: 0 })
+    axios.post("/sys/api/guide_m/sel_cpy_name/plan", { erpId: erpId, statrDate: "", endDate: "", skey: "", if_reimbursement: 0 })
       .then((res) => {
         if (res.status === 200 && res.data.success) {
           dispatch(groupListData(res.data.rows))

@@ -1,7 +1,9 @@
 .header-bar {
-  composes: bar from "css/common.css";
-  color: #fff;
-  background-color: #409EFF;
+  composes: header-bar from "css/common.css";
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
 }
 .arrow-container {
   position: relative;

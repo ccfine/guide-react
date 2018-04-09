@@ -17,7 +17,7 @@ import style from "./groupAccount.css";
 
 export default class GroupAccount extends Component {
   componentDidMount () {
-    this.props.getGroupListData();
+    this.props.getGroupListData(this.props.location.search.slice(-1));
   }
   searchSkey (skey) {
     this.props.search(skey, 0);

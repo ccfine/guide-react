@@ -14,7 +14,7 @@ import "css/global.css";
 
 export default class HistoryAccount extends Component {
   componentDidMount () {
-    this.props.getHistoryListData();
+    this.props.getHistoryListData(this.props.location.search.slice(-1));
   }
   searchSkey (skey) {
     this.props.search(skey, 1);

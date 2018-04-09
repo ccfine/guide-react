@@ -8,7 +8,7 @@ import style from "./company.css";
 
 export default class Company extends Component {
   handleSwitchRoute () {
-    this.props.history.push("/group");
+    this.props.history.push("/group?id=" + this.props.company.erpId);
   }
   render () {
     let separate = null;
