@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import leftArrow from "./leftArrow.svg";
 import "css/global.css";
@@ -7,6 +8,9 @@ import style from "./headerBar.css";
 @withRouter
 
 export default class HeaderBar extends Component {
+  static PropTypes = {
+    account: PropTypes.string.isRequired
+  }
   handleBackHome () {
     this.props.history.push("/home");
   }

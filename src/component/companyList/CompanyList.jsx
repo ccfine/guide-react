@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Company from "component/company/Company.jsx";
 import "css/global.css";
 
 export default class CompanyList extends Component {
+  static PropTypes = {
+    companys: PropTypes.array
+  }
   render () {
     return (
       <div>

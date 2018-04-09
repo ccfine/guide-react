@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import RightArrow from "component/rightArrow/RightArrow";
 import "css/global.css";
@@ -7,6 +8,9 @@ import style from "./company.css";
 @withRouter
 
 export default class Company extends Component {
+  static PropTypes = {
+    company: PropTypes.object
+  }
   handleSwitchRoute () {
     this.props.history.push("/group?id=" + this.props.company.erpId);
   }

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Group from "component/group/Group.jsx";
 import "css/global.css";
 import style from "./groupList.css";
 
 export default class GroupList extends Component {
+  static PropTypes = {
+    groups: PropTypes.array
+  }
   render () {
     let num = 0;
     let today = +new Date();

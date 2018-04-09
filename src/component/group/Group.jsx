@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "css/global.css";
 import style from "./group.css";
 
 export default class Group extends Component {
+  static PropTypes = {
+    group: PropTypes.object
+  }
   render () {
     let account = "";
     switch (this.props.group.if_reimbursement) {
