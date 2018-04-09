@@ -18,8 +18,3 @@
   border: none;
   outline: none;
 }
-.search-btn {
-  composes: middle from "css/common.css";
-  composes: font-color-1 from "css/common.css";
-  composes: font-size-1 from "css/common.css";
-}

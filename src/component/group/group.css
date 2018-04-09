@@ -1,4 +1,4 @@
-.state {
+.account {
   composes: middle from "css/common.css";
   padding: 5px 10px;
   color: #8FD26E; 
@@ -12,6 +12,7 @@
 }
 .amount {
   padding: 5px 10px 5px 0;
+  margin-right: 20px;
   border-right: 1px solid #F3F3F3;
 }
 .total {
@@ -19,6 +20,27 @@
   composes: font-size-1 from "css/common.css";
   composes: center from "css/common.css";
   margin-top: 5px;
+}
+.plan {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+.plan-code {
+  letter-spacing: 24px;
+}
+.code {
+  composes: ellipsis from "css/common.css";
+  max-width: 140px;
+}
+.op {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+.op-name {
+  composes: ellipsis from "css/common.css";
+  max-width: 60px;
 }
 .company {
   composes: manner from "css/common.css";

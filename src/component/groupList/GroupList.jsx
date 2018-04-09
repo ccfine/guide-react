@@ -6,8 +6,10 @@ import style from "./groupList.css";
 export default class GroupList extends Component {
   render () {
     let num = 0;
+    let today = +new Date();
     for (let i = 0; i < this.props.groups.length; i++) {
-      if (this.props.groups[i].if_reimbursement === 0) {
+      let backDate = +new Date(this.props.groups[i].backDate);
+      if (this.props.groups[i].if_reimbursement === 0 && today > backDate) {
         num += 1;
       }
     }

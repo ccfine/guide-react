@@ -6,17 +6,21 @@ import downArrow from "./downArrow.svg";
 import Search from "component/search/Search.jsx";
 import GroupList from "component/groupList/GroupList.jsx";
 import { getGroupListData } from "action/groupList.action.js";
+import { search } from "action/search.action.js";
 import "css/global.css";
 import style from "./groupAccount.css";
 
 @connect(
-  state => ({ groups: state.groupList }),
-  { getGroupListData }
+  state => state.groupList,
+  { getGroupListData, search }
 )
 
 export default class GroupAccount extends Component {
   componentDidMount () {
     this.props.getGroupListData();
+  }
+  searchSkey (skey) {
+    this.props.search(skey, 0);
   }
   render () {
     return (
@@ -27,9 +31,10 @@ export default class GroupAccount extends Component {
             报账状态
             <DownArrow downArrow={ downArrow }></DownArrow>
           </div>
-          <Search></Search>
+          <Search onSearch={ this.searchSkey.bind(this) }></Search>
         </div>
-        <GroupList groups={ this.props.groups.groups }></GroupList>
+        <GroupList groups={ this.props.groups }></GroupList>
+        <div className="font-color-1 center">---已经见底了---</div>
       </div>
     );
   }

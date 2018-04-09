@@ -15,6 +15,9 @@
 :global(.font-color-3) {
   color: #F56C6C;
 }
+:global(.font-color-4) {
+  color: #409EFF;
+}
 :global(.font-size-1) {
   font-size: 1.4rem;
 }
@@ -23,6 +26,15 @@
 }
 :global(.padding10) {
   padding: 10px;
+}
+:global(.separate) {
+  margin: 0 5px;
+}
+:global(.middle) {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
 :global(.manner) {
   position: relative;
@@ -43,4 +55,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+:global(.do) {
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }

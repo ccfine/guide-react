@@ -13,7 +13,7 @@ export default class HeaderBar extends Component {
   handleSwitchAcount () {
     if (this.props.account === "历史报账") {
       this.props.history.push("/history");
-    } else if (this.props.account === "团期报账") {
+    } else if (this.props.account === "当前报账") {
       this.props.history.push("/group");
     }
   }

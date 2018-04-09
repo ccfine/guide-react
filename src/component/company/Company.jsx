@@ -5,6 +5,7 @@ import "css/global.css";
 import style from "./company.css";
 
 @withRouter
+
 export default class Company extends Component {
   handleSwitchRoute () {
     this.props.history.push("/group");
@@ -12,7 +13,7 @@ export default class Company extends Component {
   render () {
     let separate = null;
     if (this.props.company.ctProvince && this.props.company.ctCity) {
-      separate = <span className={ style.separate }>|</span>;
+      separate = <span className="separate">|</span>;
     }
     return (
       <li className="manner" onClick={ this.handleSwitchRoute.bind(this) }>

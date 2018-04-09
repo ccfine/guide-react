@@ -1,12 +1,6 @@
 .font-color-1 {
   color: #909399;
 }
-.font-color-2 {
-  color: #E6A23C;
-}
-.font-color-3 {
-  color: #F56C6C;
-}
 .font-size-1 {
   font-size: 1.4rem;
 }
@@ -31,4 +25,9 @@
   height: 40px;
   line-height: 40px;
   background-color: #fff;  
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
