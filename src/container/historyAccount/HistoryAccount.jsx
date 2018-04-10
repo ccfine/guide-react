@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import HeaderBar from "component/headerBar/HeaderBar.jsx";
 import Search from "component/search/Search.jsx";
-// import HistoryList from "component/historyList/HistoryList.jsx";
+import HistoryList from "component/historyList/HistoryList.jsx";
 import { getHistoryListData } from "action/historyList.action.js";
 import { search } from "action/search.action.js";
 import "css/global.css";
@@ -17,7 +17,7 @@ export default class HistoryAccount extends Component {
     this.props.getHistoryListData(this.props.location.search.slice(-1));
   }
   searchSkey (skey) {
-    this.props.search(skey, 1);
+    this.props.search(this.props.location.search.slice(-1), skey, "1");
   }
   render () {
     return (
@@ -27,7 +27,7 @@ export default class HistoryAccount extends Component {
           <div></div>
           <Search onSearch={ this.searchSkey.bind(this) }></Search>
         </div>
-        {/* <HistoryList historys={ this.props.historys }></HistoryList> */}
+        <HistoryList historys={ this.props.historys }></HistoryList>
         <div className="font-color-1 center">---已经见底了---</div>
       </div>
     );

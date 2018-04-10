@@ -1,4 +1,5 @@
 import axios from "axios";
+import qs from "qs";
 import { groupListData } from "action/groupList.action.js";
 import { historyListData } from "action/historyList.action.js";
 
@@ -16,9 +17,9 @@ const searchHistoryError = (msg) => {
   return { type: SEARCH_HISTORY_ERROR };
 };
 
-export const search = (skey, if_reimbursement) => {
+export const search = (erpId, skey, if_reimbursement) => {
   return dispatch => {
-    axios.post("/sys/api/guide_m/sel_cpy_name/plan", { erpId: 1, statrDate: "", endDate: "", skey: skey, if_reimbursement: if_reimbursement })
+    axios.post("/sys/api/guide_m/sel_cpy_name/plan", qs.stringify({ erpId: erpId, statrDate: "", endDate: "", skey: skey, if_reimbursement: if_reimbursement }))
       .then((res) => {
         if (res.status === 200 && res.data.success) {
           if (if_reimbursement === 0) {

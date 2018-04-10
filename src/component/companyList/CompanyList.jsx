@@ -4,7 +4,7 @@ import Company from "component/company/Company.jsx";
 import "css/global.css";
 
 export default class CompanyList extends Component {
-  static PropTypes = {
+  static propTypes = {
     companys: PropTypes.array
   }
   render () {

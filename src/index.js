@@ -24,8 +24,8 @@ ReactDom.render(
         <AuthRoute></AuthRoute>
         <Switch>
           <Route path="/home" component={ Home }></Route>
-          <Route path="/group" component={ GroupAccount }></Route>
-          <Route path="/history" component={ HistoryAccount }></Route>
+          {/* <Route path="/group" component={ GroupAccount }></Route>
+          <Route path="/history" component={ HistoryAccount }></Route> */}
         </Switch>
       </div>
     </HashRouter>

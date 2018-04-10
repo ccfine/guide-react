@@ -8,7 +8,7 @@ import style from "./headerBar.css";
 @withRouter
 
 export default class HeaderBar extends Component {
-  static PropTypes = {
+  static propTypes = {
     account: PropTypes.string.isRequired
   }
   handleBackHome () {

@@ -1,5 +1,0 @@
-.right-arrow {
-  composes: middle from "css/common.css";
-  width: 15px;
-  height: 20px;
-}

@@ -1,0 +1,18 @@
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1px 0 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+.separate {
+  width: 0;
+  height: 20px;
+  border: 1px solid #DDE0E7;
+}
+.total {
+  composes: font-size-1 from "css/common.css";
+  composes: font-color-1 from "css/common.css";
+  margin-bottom: 5px;
+}

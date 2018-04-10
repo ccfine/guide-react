@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import phone from "./phone.svg";
 import "css/global.css";
 import style from "./group.css";
 
 export default class Group extends Component {
-  static PropTypes = {
+  static propTypes = {
     group: PropTypes.object
   }
   render () {
@@ -48,7 +49,7 @@ export default class Group extends Component {
               ￥
               <b className="font-size-1">{ this.props.group.guideAmount }</b>
             </div>
-            <div className={ style.total }>报账合计</div>
+            <div className="total">报账合计</div>
           </div>
           <div className="font-color-1">
             <div className={ style.plan }>
@@ -64,6 +65,9 @@ export default class Group extends Component {
               <div className={ style["op-name"] }>{ this.props.group.opName }</div>
               <div className="separate">|</div>
               <div className="font-color-2">联系我</div>
+              <div>
+                <img src={ phone } width="20" height="20" hspace="5" alt="手机" />
+              </div>
             </div>
           </div>
         </div>

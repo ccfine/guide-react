@@ -20,7 +20,7 @@ export default class GroupAccount extends Component {
     this.props.getGroupListData(this.props.location.search.slice(-1));
   }
   searchSkey (skey) {
-    this.props.search(skey, 0);
+    this.props.search(this.props.location.search.slice(-1), skey, "0");
   }
   render () {
     return (

@@ -8,7 +8,7 @@ import style from "./company.css";
 @withRouter
 
 export default class Company extends Component {
-  static PropTypes = {
+  static propTypes = {
     company: PropTypes.object
   }
   handleSwitchRoute () {
@@ -21,14 +21,18 @@ export default class Company extends Component {
     }
     return (
       <li className="manner" onClick={ this.handleSwitchRoute.bind(this) }>
-        <h3 className="font-size-1">{ this.props.company.cpyName }</h3>
-        <div className={ style.ct }>
-          { this.props.company.ctProvince? this.props.company.ctProvince: null }
-          { separate }
-          { this.props.company.ctCity? this.props.company.ctCity: null }
-        </div>
-        <span className={ style["plan-num"] }>{ this.props.company.planNum }个团期</span>
-        <RightArrow></RightArrow>
+        <div>
+          <h3 className="font-size-1">{ this.props.company.cpyName }</h3>
+          <div className={ style.ct }>
+            { this.props.company.ctProvince? this.props.company.ctProvince: null }
+            { separate }
+            { this.props.company.ctCity? this.props.company.ctCity: null }
+          </div>
+        </div>   
+        <div className={ style["plan-num"] }>
+          <span>{ this.props.company.planNum }个团期</span>
+          <RightArrow></RightArrow>
+        </div>           
       </li>
     );
   }

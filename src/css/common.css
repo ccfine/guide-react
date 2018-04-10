@@ -4,11 +4,10 @@
 .font-size-1 {
   font-size: 1.4rem;
 }
-.center {
-  text-align: center;
-}
 .manner {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1px;
   padding: 10px;
   background-color: #fff;
@@ -32,4 +31,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.items-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

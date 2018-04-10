@@ -3,6 +3,5 @@
   margin-top: 5px;
 }
 .plan-num {
-  composes: middle from "css/common.css";
-  right: 9%;
+  composes: items-center from "css/common.css";
 }

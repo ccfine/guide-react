@@ -1,5 +1,4 @@
 .account {
-  composes: middle from "css/common.css";
   padding: 5px 10px;
   color: #8FD26E; 
   background-color: #EFF7E6;
@@ -14,12 +13,6 @@
   padding: 5px 10px 5px 0;
   margin-right: 20px;
   border-right: 1px solid #F3F3F3;
-}
-.total {
-  composes: font-color-1 from "css/common.css";
-  composes: font-size-1 from "css/common.css";
-  composes: center from "css/common.css";
-  margin-top: 5px;
 }
 .plan {
   display: flex;

@@ -7,12 +7,12 @@
 }
 .arrow-container {
   position: relative;
-  width: 45px;
+  width: 35px;
 }
 .left-arrow {
   composes: middle from "css/common.css";
-  width: 35px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   right: 0;
 }
 .account {
