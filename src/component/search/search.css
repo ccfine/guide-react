@@ -1,20 +1,17 @@
 .search {
-  position: relative;
+  composes: items-center from "css/common.css";
   width: 200px;
 }
 .search-container {
-  composes: middle from "css/common.css";
-  width: 150px;
+  composes: items-center from "css/common.css";
+  justify-content: center;
+  width: 160px;
   height: 30px;
-  left: 0;
   border: 1px solid #909399;
   border-radius: 20px;
 }
 .search-area {
-  composes: middle from "css/common.css";
-  width: 100px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 110px;
   border: none;
   outline: none;
 }

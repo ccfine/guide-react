@@ -1,7 +1,6 @@
 .account-state {
-  composes: font-size-1 from "css/common.css";
-  position: relative;
-  width: 100px;
-  padding-left: 10px;
+  composes: items-center from "css/common.css";
+  align-items: flex-start;
+  width: 90px;
   border-right: 2px solid #F0F0F0;
 }

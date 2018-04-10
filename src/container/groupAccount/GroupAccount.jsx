@@ -26,9 +26,9 @@ export default class GroupAccount extends Component {
     return (
       <div className="screen">
         <HeaderBar account="历史报账"></HeaderBar>
-        <div className="bar">
+        <div className="bar items-center bgcolor">
           <div className={ style["account-state"] }>
-            报账状态
+            <div className="font-size-1">报账状态</div>
             <DownArrow downArrow={ downArrow }></DownArrow>
           </div>
           <Search onSearch={ this.searchSkey.bind(this) }></Search>

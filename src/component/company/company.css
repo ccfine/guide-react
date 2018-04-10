@@ -1,7 +1,0 @@
-.ct {
-  composes: font-color-1 from "css/common.css";
-  margin-top: 5px;
-}
-.plan-num {
-  composes: items-center from "css/common.css";
-}

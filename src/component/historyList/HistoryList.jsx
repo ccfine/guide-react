@@ -13,19 +13,19 @@ export default class HistoryList extends Component {
   render () {
     return (
       <div>
-        <div className={ style.statistics }>
-          <div className="items-center">
+        <div className="items-center bgcolor mar-bot10 padding10">
+          <div className={  style.statistics }>
             <img src={ daofu } width="20" height="20" alt="导服费" />
             <div>
-              <div className={ style.total }>导服费（人民币）</div>
+              <div className="font-color-1 font-size-1 mar-bot5">导服费（人民币）</div>
               <b className="font-size-1">250</b>
             </div>
           </div>
           <div className={ style.separate }></div>
-          <div className="items-center">
+          <div className={  style.statistics }>
             <img src={ tuanshu } width="20" height="20" alt="历史带团数" />
             <div>
-              <div className={ style.total }>历史带团数（个）</div>
+              <div className="font-color-1 font-size-1 mar-bot5">历史带团数（个）</div>
               <b className="font-size-1">{ this.props.historys.length }</b>
             </div>
           </div>

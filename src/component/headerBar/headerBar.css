@@ -1,21 +1,12 @@
 .header-bar {
-  composes: header-bar from "css/common.css";
+  composes: items-center from "css/common.css";
   position: fixed;
   left: 0;
   top: 0;
   z-index: 10;
-}
-.arrow-container {
-  position: relative;
-  width: 35px;
-}
-.left-arrow {
-  composes: middle from "css/common.css";
-  width: 20px;
-  height: 20px;
-  right: 0;
-}
-.account {
-  composes: font-size-1 from "css/common.css";
-  padding-right: 15px;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  color: #fff;
+  background-color: #409EFF;
 }

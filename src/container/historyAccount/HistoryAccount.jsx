@@ -23,7 +23,7 @@ export default class HistoryAccount extends Component {
     return (
       <div className="screen">
         <HeaderBar account="当前报账"></HeaderBar>    
-        <div className="bar">
+        <div className="bar items-center bgcolor mar-bot1">
           <div></div>
           <Search onSearch={ this.searchSkey.bind(this) }></Search>
         </div>
