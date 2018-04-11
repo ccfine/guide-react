@@ -26,7 +26,7 @@ export default class HeaderBar extends Component {
       <div className={ style["header-bar"] }>
         <img src={ leftArrow } width="20" onClick={ this.handleBackHome.bind(this) } alt="左箭头返回首页" />
         <div>同天下科技公司</div>
-        <div onClick={this.handleSwitchAcount.bind(this)}>{ this.props.account }</div>
+        <div className="font-size-1" onClick={this.handleSwitchAcount.bind(this)}>{ this.props.account }</div>
       </div>
     );
   }
