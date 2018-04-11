@@ -18,7 +18,7 @@ let store = createStore(reducer, compose(
 ));
 
 ReactDom.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <HashRouter>
       <div>
         <AuthRoute></AuthRoute>

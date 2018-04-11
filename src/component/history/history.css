@@ -1,0 +1,14 @@
+.title {
+  composes: ellipsis from "css/common.css";
+  font-size: 1.5rem;
+  width: 90%;
+  margin-bottom: 5px;
+}
+.plan-code {
+  composes: ellipsis from "css/common.css";
+  width: 140px;
+}
+.amount {
+  padding-left: 10px;
+  border-left: 1px solid #F3F3F3;;
+}

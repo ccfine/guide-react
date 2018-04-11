@@ -1,3 +1,8 @@
+.title {
+  composes: ellipsis from "css/common.css";
+  font-size: 1.5rem;
+  width: 65%;
+}
 .account {
   padding: 5px 10px;
   color: #8FD26E; 
@@ -7,15 +12,12 @@
 }
 .amount {
   padding: 5px 10px 5px 0;
-  margin-right: 20px;
+  margin-right: 15px;
   border-right: 1px solid #F3F3F3;
 }
 .plan-code {
-  letter-spacing: 24px;
-}
-.code {
   composes: ellipsis from "css/common.css";
-  max-width: 140px;
+  width: 38%;
 }
 .op-name {
   composes: ellipsis from "css/common.css";

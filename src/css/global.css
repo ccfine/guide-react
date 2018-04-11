@@ -42,6 +42,9 @@
 :global(.padding10) {
   padding: 10px;
 }
+:global(.let-spa24) {
+  letter-spacing: 24px;
+}
 :global(.separate) {
   margin: 0 5px;
 }
@@ -55,13 +58,6 @@
   margin-top: 40px;
   padding: 0 10px;
   height: 40px;
-}
-:global(.title) {
-  font-size: 1.5rem;
-  width: 80%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 :global(.relative) {
   position: relative;
@@ -81,4 +77,7 @@
 }
 :global(.items-start) {
   align-items: flex-start;
+}
+:global(.nowrap) {
+  white-space: nowrap;
 }

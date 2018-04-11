@@ -40,7 +40,7 @@ export default class Group extends Component {
     return (
       <li>
         <div className="items-center bgcolor mar-bot1 padding5">
-          <h1 className="title">{ this.props.group.lineTitle }</h1>
+          <h1 className={ style.title }>{ this.props.group.lineTitle }</h1>
           { account? <span className={ style.account }>{ account }</span>: null }
         </div>
         <div className="items-center flex-start bgcolor mar-bot1 padding10 relative">
@@ -49,12 +49,12 @@ export default class Group extends Component {
               ￥
               <b className="font-size-1">{ this.props.group.guideAmount }</b>
             </div>
-            <div className="font-color-1 font-size-1">报账合计</div>
+            <div className="font-color-1 font-size-1 nowrap">报账合计</div>
           </div>
           <div className="font-color-1">
             <div className="items-center flex-start mar-bot5">
-              <div className={ style["plan-code"] }>团</div>号：
-              <div className={ style.code }>{ this.props.group.planCode }</div>
+              <div className="let-spa24">团</div>号：
+              <div className={ style["plan-code"] }>{ this.props.group.planCode }</div>
               { state }
             </div>
             <div className="mar-bot5">
