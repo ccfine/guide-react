@@ -21,7 +21,7 @@
   composes: ellipsis from "css/common.css";
   max-width: 60px;
 }
-.write {
+.record {
   padding: 5px 20px;
   color: #fff;
   background-color: #A0CFFF;

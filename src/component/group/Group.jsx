@@ -39,7 +39,7 @@ export default class Group extends Component {
     }
     return (
       <li>
-        <div className="bgcolor items-center mar-bot1 padding5">
+        <div className="items-center bgcolor mar-bot1 padding5">
           <h1 className="title">{ this.props.group.lineTitle }</h1>
           { account? <span className={ style.account }>{ account }</span>: null }
         </div>
@@ -49,7 +49,7 @@ export default class Group extends Component {
               ￥
               <b className="font-size-1">{ this.props.group.guideAmount }</b>
             </div>
-            <div className="font-color-1">报账合计</div>
+            <div className="font-color-1 font-size-1">报账合计</div>
           </div>
           <div className="font-color-1">
             <div className="items-center flex-start mar-bot5">
@@ -73,7 +73,7 @@ export default class Group extends Component {
         </div>
         <div className="items-center bgcolor padding5 mar-bot10">
           <div className="font-color-1">深圳市同天下科技有限公司</div>
-          <div className={ style.write }>记一笔</div>
+          <div className={ style.record }>记一笔</div>
         </div>
       </li>
     );
