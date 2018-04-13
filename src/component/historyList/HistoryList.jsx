@@ -11,6 +11,10 @@ export default class HistoryList extends Component {
     historys: PropTypes.array
   }
   render () {
+    let daoFu = 0;
+    for (let i = 0; i < this.props.historys.length; i++) {
+      daoFu += this.props.historys[i].guideAmount;
+    }
     return (
       <div>
         <div className="items-center bgcolor mar-bot10 padding10">
@@ -18,7 +22,7 @@ export default class HistoryList extends Component {
             <img src={ daofu } width="20" height="20" alt="导服费" />
             <div>
               <div className="font-color-1 font-size-1 mar-bot5">导服费(人民币)</div>
-              <b className="font-size-1">250</b>
+              <b className="font-size-1">{ daoFu }</b>
             </div>
           </div>
           <div className={ style.separate }></div>

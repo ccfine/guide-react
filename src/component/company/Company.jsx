@@ -19,7 +19,7 @@ export default class Company extends Component {
       separate = <span className="separate">|</span>;
     }
     return (
-      <li className="items-center mar-bot1 bgcolor padding10" onClick={ this.handleSwitchRoute.bind(this) }>
+      <li className="items-center bor-bot1 bgcolor padding10" onClick={ this.handleSwitchRoute.bind(this) }>
         <div>
           <h3 className="font-size-1 mar-bot5">{ this.props.company.cpyName }</h3>
           <div className="font-color-1">

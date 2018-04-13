@@ -1,17 +1,17 @@
 import axios from "axios";
 
-export const COMPANY_LIST_DATA = "COMPANY_LIST_DATA";
+export const COMPANY_LIST = "COMPANY_LIST";
 
-const companyListData = (data) => {
-  return { type: COMPANY_LIST_DATA, data: data};
+const companyList = (data) => {
+  return { type: COMPANY_LIST, data: data};
 };
 
-export const getCompanyListData = () => {
+export const getCompanyList = () => {
   return dispatch => {
     axios.post("/sys/api/guide_m/sel_cpy_name", {})
       .then((res) => {
         if (res.status === 200 && res.data.success === true) {
-          dispatch(companyListData(res.data.rows))
+          dispatch(companyList(res.data.rows))
         }
       });
   };

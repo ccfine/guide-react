@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
-import { groupListData } from "action/groupList.action.js";
-import { historyListData } from "action/historyList.action.js";
+import { groupList } from "action/groupList.action.js";
+import { historyList } from "action/historyList.action.js";
 
 const layer = window.layer;
 export const SEARCH_GROUP_ERROR = "SEARCH_GROUP_ERROR";
@@ -23,9 +23,9 @@ export const search = (erpId, skey, if_reimbursement) => {
       .then((res) => {
         if (res.status === 200 && res.data.success) {
           if (if_reimbursement === 0) {
-            dispatch(groupListData(res.data.rows));
+            dispatch(groupList(res.data.rows));
           } else {
-            dispatch(historyListData(res.data.rows));            
+            dispatch(historyList(res.data.rows));            
           }       
         } else {
           if (if_reimbursement === 0) {

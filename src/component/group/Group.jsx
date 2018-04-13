@@ -33,17 +33,17 @@ export default class Group extends Component {
     let today = +new Date();
     let backDate = +new Date(this.props.group.backDate);
     if (today < backDate) {
-      state = <div className="do font-color-4">正在进行</div>
+      state = <div className="do font-color-4">正在进行</div>;
     } else {
-      state = <div className="do font-color-3">行程结束</div>
+      state = <div className="do font-color-3">行程结束</div>;
     }
     return (
       <li>
-        <div className="items-center bgcolor mar-bot1 padding5">
+        <div className="items-center bgcolor bor-bot1 padding5">
           <h1 className={ style.title }>{ this.props.group.lineTitle }</h1>
           { account? <span className={ style.account }>{ account }</span>: null }
         </div>
-        <div className="items-center flex-start bgcolor mar-bot1 padding10 relative">
+        <div className="items-center flex-start bgcolor bor-bot1 padding10 relative">
           <div className={ style.amount }>
             <div className="font-color-3 center mar-bot5"> 
               ￥

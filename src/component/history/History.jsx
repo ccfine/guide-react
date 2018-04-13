@@ -10,7 +10,7 @@ export default class History extends Component {
   render () {
     return (
       <li>
-        <div className="items-center mar-bot1 padding10 bgcolor">
+        <div className="items-center bor-bot1 padding10 bgcolor">
           <div>
             <h1 className={ style.title }>{ this.props.history.lineTitle }</h1>
             <div className="items-center flex-start font-color-1">

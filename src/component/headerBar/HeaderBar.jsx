@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import leftArrow from "./leftArrow.svg";
 import "css/global.css";
-import style from "./headerBar.css";
 
 @withRouter
 
@@ -23,7 +22,7 @@ export default class HeaderBar extends Component {
   }
   render () {
     return (
-      <div className={ style["header-bar"] }>
+      <div className="items-center header-bar padding5">
         <img src={ leftArrow } width="20" onClick={ this.handleBackHome.bind(this) } alt="左箭头返回首页" />
         <div>同天下科技公司</div>
         <div className="font-size-1" onClick={this.handleSwitchAcount.bind(this)}>{ this.props.account }</div>

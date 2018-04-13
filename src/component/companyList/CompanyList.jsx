@@ -9,7 +9,7 @@ export default class CompanyList extends Component {
   }
   render () {
     return (
-      <div>
+      <div className="mar-top40">
         <h2 className="font-color-1 padding10">公司列表</h2>
         <ul>
           { this.props.companys.map((company) => 

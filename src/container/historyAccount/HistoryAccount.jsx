@@ -3,18 +3,18 @@ import { connect } from "react-redux";
 import HeaderBar from "component/headerBar/HeaderBar.jsx";
 import Search from "component/search/Search.jsx";
 import HistoryList from "component/historyList/HistoryList.jsx";
-import { getHistoryListData } from "action/historyList.action.js";
+import { getHistoryList } from "action/historyList.action.js";
 import { search } from "action/search.action.js";
 import "css/global.css";
 
 @connect(
   state => state.historyList,
-  { getHistoryListData, search }
+  { getHistoryList, search }
 )
 
 export default class HistoryAccount extends Component {
   componentDidMount () {
-    this.props.getHistoryListData(this.props.location.search.slice(-1));
+    this.props.getHistoryList(this.props.location.search.slice(-1));
   }
   searchSkey (skey) {
     this.props.search(this.props.location.search.slice(-1), skey, "1");
@@ -23,7 +23,7 @@ export default class HistoryAccount extends Component {
     return (
       <div className="screen">
         <HeaderBar account="当前报账"></HeaderBar>    
-        <div className="bar items-center bgcolor mar-bot1">
+        <div className="items-center bgcolor bor-bot1 mar-top40 padding5">
           <div></div>
           <Search onSearch={ this.searchSkey.bind(this) }></Search>
         </div>

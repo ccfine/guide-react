@@ -24,17 +24,14 @@
 :global(.bgcolor) {
   background-color: #fff;
 }
-:global(.mar-bot1) {
-  margin-bottom: 1px;
-}
 :global(.mar-bot5) {
   margin-bottom: 5px;
 }
 :global(.mar-bot10) {
   margin-bottom: 10px;
 }
-:global(.center) {
-  text-align: center;
+:global(.mar-top40) {
+  margin-top: 40px;
 }
 :global(.padding5) {
   padding: 5px 10px;
@@ -42,22 +39,27 @@
 :global(.padding10) {
   padding: 10px;
 }
+:global(.center) {
+  text-align: center;
+}
 :global(.let-spa24) {
   letter-spacing: 24px;
 }
 :global(.separate) {
   margin: 0 5px;
 }
+:global(.bor-bot1) {
+  border-bottom: 1px solid #F0F0F0;
+}
 :global(.header-bar) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   height: 40px;
-  padding: 0 10px;
   color: #fff;
   background-color: #409EFF;
-}
-:global(.bar) {
-  margin-top: 40px;
-  padding: 0 10px;
-  height: 40px;
 }
 :global(.relative) {
   position: relative;

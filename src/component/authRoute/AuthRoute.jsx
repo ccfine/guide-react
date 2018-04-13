@@ -7,7 +7,7 @@ export default class AuthRoute extends Component {
      .then((res) => {
        //如果没有登录，则跳转到登录页
        if (!res.data.rows) {      
-        window.location.href = window.location.origin + '/login.html'
+        window.location.href = window.location.origin + "/login.html";
        }
      });
   }
