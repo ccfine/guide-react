@@ -1,0 +1,49 @@
+:global(.user-enter) {
+  left: -100%;
+}
+:global(.user-enter-active) {
+  left: 0;
+  transition: left 300ms linear;
+}
+:global(.user-enter-done) {
+  left: 0;
+}
+:global(.user-exit) {
+  left: 0;
+}
+:global(.user-exit-active) {
+  left: -100%;
+  transition: left 300ms linear;
+}
+:global(.user-exit-done) {
+  left: -100%;
+}
+:global(.mask) {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background-color: #000;
+  opacity: 0.2;
+  display: none;
+}
+:global(.mask-enter) {
+  display: none;
+}
+:global(.mask-enter-active) {
+  display: block;
+}
+:global(.mask-enter-done) {
+  display: block;
+}
+:global(.mask-exit) {
+  display: block;
+}
+:global(.mask-exit-active) {
+  display: none;
+}
+:global(.mask-exit-done) {
+  display: none;
+}
