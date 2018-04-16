@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { account } from "container/account/Account.js";
-import HeaderBar from "container/headerBar/HeaderBar.jsx";
+import HeaderBar from "component/headerBar/HeaderBar.jsx";
 // import DownArrow from "component/downArrow/DownArrow.jsx";
 // import downArrow from "./downArrow.svg";
 import Search from "component/search/Search.jsx";
