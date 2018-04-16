@@ -37,11 +37,11 @@ export default class Home extends Component {
         <div className="items-center header-bar padding5">
           <div className="items-center" onClick={ this.handleSwitchUser.bind(this) }>
             <img src={ my } width="25" alt="我的" />
-            <div>我的</div>
+            <div className="font-size-1">我的</div>
           </div>
           <div className="font-size-1">首页</div>
           <div className="items-center">
-            <div>帮助</div>
+            <div className="font-size-1">帮助</div>
             <img src={ help } width="20" alt="帮助" />
           </div>
         </div>

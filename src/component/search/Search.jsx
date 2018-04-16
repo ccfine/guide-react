@@ -23,7 +23,7 @@ export default class Search extends Component {
         <div className={ style["search-container"] }> 
           <input className={ style["search-area"] } placeholder="线路名称、团号" onChange={ this.handleChangeSkey.bind(this) } />
         </div>
-       <div className="font-color-1 font-size-1" onClick={ this.handleSearchSkey.bind(this) }>搜索</div>
+        <div className="font-color-1 font-size-1" onClick={ this.handleSearchSkey.bind(this) }>搜索</div>
       </div>
     );
   }

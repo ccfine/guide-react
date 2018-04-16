@@ -7,7 +7,7 @@ export default class DownArrow extends Component {
   }
   render () {
     return (
-      <img src={ this.props.downArrow } width="20" hspace="5" alt="下箭头" />
+      <img src={ this.props.downArrow } width="20" hspace="5" onClick={ this.props.onSlide } alt="下箭头" />
     );
   }
 }

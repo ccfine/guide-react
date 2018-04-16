@@ -1,0 +1,43 @@
+.company-name {
+  composes: ellipsis from "css/common.css";
+  max-width: 120px;
+  font-size: 1.4rem;
+}
+:global(.lists) {
+  position: absolute;
+  left: -100%;
+  top: 40px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #F0F0F0;
+}
+:global(.lists-enter) {
+  left: -100%;
+}
+:global(.lists-enter-active) {
+  left: 0;
+  transition: left 300ms linear;
+}
+:global(.lists-enter-done) {
+  left: 0;
+}
+:global(.lists-exit) {
+  left: 0;
+}
+:global(.lists-exit-active) {
+  left: -100%;
+  transition: left 300ms linear;
+}
+:global(.lists-exit-done) {
+  left: -100%;
+}
+.list {
+  padding: 5px 10px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.list:hover {
+  color: #fff;
+  background-color: #909399;
+}

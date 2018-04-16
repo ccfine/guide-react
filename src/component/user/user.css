@@ -11,9 +11,15 @@
 .user {
   padding: 20px 15px;
   color: #fff;
-  background-color: #1975FE;
+  background-image: url("./bg.jpeg");
+  background-size: cover;
 }
 .user-name {
   font-size: 2rem;
   margin-bottom: 20px;
+}
+.erweima {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }

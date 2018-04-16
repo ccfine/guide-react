@@ -1,33 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HeaderBar from "component/headerBar/HeaderBar.jsx";
+import { account } from "container/account/Account.js";
+import HeaderBar from "container/headerBar/HeaderBar.jsx";
 import Search from "component/search/Search.jsx";
 import HistoryList from "component/historyList/HistoryList.jsx";
+import { getCompanyList } from "action/companyList.action.js";
 import { getHistoryList } from "action/historyList.action.js";
-import { search } from "action/search.action.js";
 import "css/global.css";
 
 @connect(
-  state => state.historyList,
-  { getHistoryList, search }
+  state => state,
+  { getCompanyList, getHistoryList }
 )
+@account
 
 export default class HistoryAccount extends Component {
   componentDidMount () {
-    this.props.getHistoryList(this.props.location.search.slice(-1));
+    this.props.getCompanyList();
+    this.props.getHistoryList(this.props.match.params.erpId);
   }
-  searchSkey (skey) {
-    this.props.search(this.props.location.search.slice(-1), skey, "1");
+  search (skey) {
+    this.props.searchSkey(skey, "1");
   }
   render () {
     return (
       <div className="screen">
-        <HeaderBar account="当前报账"></HeaderBar>    
+        <HeaderBar companys={ this.props.companyList.companys } account="当前报账"></HeaderBar>    
         <div className="items-center bgcolor bor-bot1 mar-top40 padding5">
           <div></div>
-          <Search onSearch={ this.searchSkey.bind(this) }></Search>
+          <Search onSearch={ this.search.bind(this) }></Search>
         </div>
-        <HistoryList historys={ this.props.historys }></HistoryList>
+        <HistoryList historys={ this.props.historyList.historys }></HistoryList>
         <div className="font-color-1 center">---已经见底了---</div>
       </div>
     );
